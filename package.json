@@ -1,0 +1,19 @@
+{
+  "name": "educhoice-capstone",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cd client/frontend && npm run dev",
+    "build": "cd client/frontend && npm run build",
+    "start": "cd client/frontend && npm run preview"
+  },
+  "dependencies": {
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.5.1",
+    "formidable": "^3.5.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}
