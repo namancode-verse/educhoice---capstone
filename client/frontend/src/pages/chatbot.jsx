@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { marked } from "marked";
+import { API_BASE_URL } from '../config/api';
 
 marked.setOptions({
   gfm: true,
@@ -21,7 +22,7 @@ export default function Chatbot() {
   const chatWindowRef = useRef(null);
 
   // Use backend proxy to avoid exposing API keys from the client.
-  const apiUrl = 'http://localhost:5000/api/chat'
+  const apiUrl = `${API_BASE_URL}/api/chat`
 
   
 

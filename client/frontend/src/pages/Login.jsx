@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import uiImage from '../assets/login_page_ui.jpg'
 import TopLeftLogo from '../components/TopLeftLogo'
+import { API_BASE_URL } from '../config/api'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -15,7 +16,7 @@ export default function Login() {
     e.preventDefault()
     setError('')
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password, role })
+      const res = await axios.post(`${API_BASE_URL}/api/auth/login`, { email, password, role })
       if (role === 'teacher') {
         localStorage.setItem('teacher', JSON.stringify(res.data))
         navigate('/teacher')
@@ -25,7 +26,7 @@ export default function Login() {
       }
     } catch (err) {
       if (err.response) setError(err.response.data?.message || 'Login failed')
-      else setError('Cannot reach server. Is backend running on http://localhost:5000 ?')
+      else setError('Cannot reach server. Please try again later.')
     }
   }
 
