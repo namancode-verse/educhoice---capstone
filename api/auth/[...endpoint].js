@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb'
 import mongoose from 'mongoose'
 
-const mongoUrl = process.env.MONGO_URI || 'mongodb://localhost:27017'
+const mongoUrl = process.env.MONGO_URI || 'mongodb://localhost:27017/campusElectives'
 
 // User Schema for Mongoose
 const userSchema = new mongoose.Schema({
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
   // Connect to MongoDB
   if (!mongoose.connections[0].readyState) {
-    await mongoose.connect(mongoUrl.replace('/localhost', '/campusElectives'))
+    await mongoose.connect(mongoUrl)
   }
 
   const { endpoint } = req.query

@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb'
 import formidable from 'formidable'
 
-const mongoUrl = process.env.MONGO_URI || 'mongodb://localhost:27017'
+const mongoUrl = process.env.MONGO_URI || 'mongodb://localhost:27017/campusElectives'
 
 export const config = {
   api: {
