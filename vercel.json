@@ -20,9 +20,5 @@
       "src": "/(.*)",
       "dest": "/client/frontend/dist/$1"
     }
-  ],
-  "env": {
-    "MONGO_URI": "@mongo_uri",
-    "GEMINI_API_KEY": "@gemini_api_key"
-  }
+  ]
 }
