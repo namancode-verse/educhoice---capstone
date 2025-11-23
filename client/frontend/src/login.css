@@ -1,0 +1,100 @@
+/* login.css
+   Styles for login page layout to match the provided screenshot.
+   Left side: large campus image.
+   Right side: white login card with purple sign-in button and social sign-in boxes.
+*/
+
+:root{
+  --accent: #6b21a8; /* purple */
+  --accent-2: #7c3aed;
+  --muted: #6b7280;
+}
+
+/* Page container */
+.auth-page{
+  min-height: 100vh;
+  display: flex;
+  /* anchor the auth section to the top so it sits under the header */
+  align-items: flex-start;
+  justify-content: center;
+  background: #fff;
+  /* small top offset so content isn't flush against the viewport edge */
+  padding: 12px 0 0 0;
+}
+
+.auth-inner{
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: none;
+}
+
+/* Left image (large) */
+.auth-left{
+  flex: 1.15 1 0px;
+  background: #f3f4f6;
+  display: block;
+  overflow: hidden;
+  margin-top: 2px; /* reduce space so content sits near header */
+}
+.auth-left .auth-art{
+  width: 100%;
+  /* keep the image large but not excessively taller than the viewport */
+  height: 70vh;
+  object-fit: cover;
+  display: block;
+  margin-top: 0;
+}
+
+/* Right column: white panel for login */
+.auth-right{
+  width: 420px;
+  flex: 0 0 420px;
+  display: flex;
+  /* align login card to the top so it sits near the header */
+  align-items: flex-start;
+  justify-content: center;
+  background: #ffffff;
+  /* add a little top padding to visually separate from header */
+  padding-top: 12px;
+}
+
+.auth-card{
+  width: 360px;
+  background: #fff;
+  padding: 28px 28px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(16,24,40,0.08);
+  color: #111827;
+}
+
+.auth-title{ font-size: 1.4rem; margin:0 0 6px 0; color:#111827 }
+.auth-sub{ margin:0 0 14px 0; color:var(--muted); font-size:0.95rem }
+
+.auth-form{ display:flex; flex-direction:column; gap:10px }
+.field-label{ font-size:0.85rem; color:#374151; text-align:left }
+.field-input{ width:100%; padding:10px 12px; border:1px solid #e6e6e6; border-radius:6px; font-size:0.95rem }
+
+.primary-btn{ background: linear-gradient(90deg,var(--accent-2),var(--accent)); color:#fff; border:none; padding:10px 12px; border-radius:6px; cursor:pointer; font-weight:600 }
+.primary-btn:hover{ filter:brightness(.98) }
+
+.social-btn{ display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:6px; border:1px solid #e6e6e6; background:#fff; cursor:pointer }
+.social-btn img{ width:18px; height:18px }
+
+.auth-note{ color:var(--muted); font-size:0.85rem; margin-top:10px }
+
+.auth-error{ color:#b91c1c; font-size:0.9rem }
+
+/* Make sure any custom-select items look neat inside white card */
+.custom-select .custom-select-toggle{ background:#fff; border:1px solid #e6e6e6; padding:10px; border-radius:6px }
+.custom-select-list{ box-shadow:0 8px 30px rgba(2,6,23,0.08); border-radius:6px }
+.custom-select-item{ padding:10px 12px }
+
+/* Small screens: stack and let the image shrink to top */
+@media (max-width: 900px){
+  .auth-inner{ flex-direction: column-reverse }
+  .auth-left .auth-art{ height:260px }
+  .auth-right{ width:100%; flex: 0 0 auto; padding: 28px 14px }
+  .auth-card{ width:100%; }
+}
